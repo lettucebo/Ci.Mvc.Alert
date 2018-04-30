@@ -16,10 +16,10 @@ then at controller action set alert message
 ```csharp
 this.SetAlert("Ci.Mvc.Alert Demo");
 ```
+**this** means Controller
 
 OR
 
-**this** means Controller
 <br>
 it use Controller to extened method, so you also can get controller instance to use this method
 ```csharp
