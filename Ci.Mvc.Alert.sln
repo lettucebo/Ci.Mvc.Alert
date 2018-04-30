@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Mvc.Alert", "Ci.Mvc.Alert\Ci.Mvc.Alert.csproj", "{BFFB827E-149C-4DDC-BA64-D978AC3178FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Mvc.Alert.Core", "Ci.Mvc.Alert.Core\Ci.Mvc.Alert.Core.csproj", "{8F21139C-A398-4F02-AAED-3B5B3DF48900}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BFFB827E-149C-4DDC-BA64-D978AC3178FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFFB827E-149C-4DDC-BA64-D978AC3178FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFFB827E-149C-4DDC-BA64-D978AC3178FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F21139C-A398-4F02-AAED-3B5B3DF48900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F21139C-A398-4F02-AAED-3B5B3DF48900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F21139C-A398-4F02-AAED-3B5B3DF48900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F21139C-A398-4F02-AAED-3B5B3DF48900}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
