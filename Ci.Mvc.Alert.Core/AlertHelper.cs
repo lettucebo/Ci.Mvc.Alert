@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Ci.Extension.Core;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -18,9 +18,13 @@ namespace Ci.Mvc.Alert.Core
             {
                 var tempData = ViewContext.TempData;
 
-                output.TagName = "script";
+                var msg = tempData["CiMvcAlert"]?.ToString();
 
-                var script = $@"
+                if (!msg.IsNullOrWhiteSpace())
+                {
+                    output.TagName = "script";
+
+                    var script = $@"
                                     // start CiMvcAlert
                                     if (!(typeof bootbox === 'object')) {{
                                         console.log('%c Ci.Mvc.Alert require bootboxJs to run!','color:#FF0000;')
@@ -29,7 +33,8 @@ namespace Ci.Mvc.Alert.Core
                                     }}
                                     // end CiMvcAlert
                                 ";
-                output.PostContent.AppendHtml(script);
+                    output.PostContent.AppendHtml(script);
+                }
             }
         }
     }
