@@ -31,6 +31,8 @@ controller.SetAlert("Ci.Mvc.Alert Demo");
 To show the message at view, at view add following code
 <br>
 **ASP.NET**
+
+html
 ```csharp
 @Html.ShowAlert()
 ```
@@ -42,6 +44,7 @@ Startup.cs add service
 services.AddScoped<ITagHelperComponent, CiMvcAlertTagHelper>();
 ```
 
+html
 ```html
 <cimvcalert></cimvcalert>
 ```
