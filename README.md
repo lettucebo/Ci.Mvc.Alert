@@ -36,6 +36,12 @@ To show the message at view, at view add following code
 ```
 
 **ASP.NET Core**
+
+Startup.cs add service
+```csharp
+services.AddScoped<ITagHelperComponent, CiMvcAlertTagHelper>();
+```
+
 ```html
 <cimvcalert></cimvcalert>
 ```
