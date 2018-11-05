@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace Ci.Mvc.Alert.Core
+namespace Ci.Mvc.Alert.NetCore
 {
     [HtmlTargetElement("CiMvcAlert")]
     public class CiMvcAlertTagHelper : TagHelper
