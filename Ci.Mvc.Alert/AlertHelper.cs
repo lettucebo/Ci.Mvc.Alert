@@ -26,7 +26,7 @@ namespace Ci.Mvc.Alert
             script.InnerHtml = $@"
                                     // start CiMvcAlert
                                     if (!(typeof bootbox === 'object')) {{
-                                        console.log('Ci.Mvc.Alert require bootboxJs to run!')
+                                        throw('Ci.Mvc.Alert require bootboxJs to run!')
                                     }} else {{
                                         bootbox.alert('{message}');
                                     }}
