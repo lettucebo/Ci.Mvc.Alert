@@ -62,6 +62,8 @@ To show the message at view, at view add following code
 
 html
 ```csharp
+@using Ci.Mvc.Alert
+...
 @Html.ShowAlert()
 ```
 
