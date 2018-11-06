@@ -33,8 +33,8 @@ this.SetAlert("A quick way to show alert mseeage for aspnet mvc and aspnetcore m
 use nuget to install package: [Ci.Mvc.Alert](https://www.nuget.org/packages/Ci.Mvc.Alert/)
 
 ```base
-Package Explorer: Install-Package Ci.Mvc.Alert -Version 2.0.1
-DotNet CLI: dotnet add package Ci.Mvc.Alert --version 2.0.1
+Package Explorer: Install-Package Ci.Mvc.Alert
+DotNet CLI: dotnet add package Ci.Mvc.Alert
 ```
 
 then at controller action set alert message
@@ -81,9 +81,9 @@ then add `cimvcalert` tag at razor page(cshtml)
 
 ### Example
 
-ASP.NET MVC: 
+ASP.NET MVC: [Ci.Mvc.Alert.Net.Example](https://github.com/lettucebo/Ci.Mvc.Alert/tree/master/Ci.Mvc.Alert.Net.Example): [_Layout.cshtml](https://github.com/lettucebo/Ci.Mvc.Alert/blob/master/Ci.Mvc.Alert.Net.Example/Views/Shared/_Layout.cshtml)
 
-ASP.NET Core MVC: 
+ASP.NET Core MVC: [Ci.Mvc.Alert.NetCore.Example](https://github.com/lettucebo/Ci.Mvc.Alert/tree/master/Ci.Mvc.Alert.NetCore.Example): [_ViewImports.cshtml](https://github.com/lettucebo/Ci.Mvc.Alert/blob/master/Ci.Mvc.Alert.NetCore.Example/Views/_ViewImports.cshtml), [_Layout.cshtml](https://github.com/lettucebo/Ci.Mvc.Alert/blob/master/Ci.Mvc.Alert.NetCore.Example/Views/Shared/_Layout.cshtml)
 
 ### Note
 
