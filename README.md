@@ -81,9 +81,13 @@ then add `cimvcalert` tag at razor page(cshtml)
 
 ### Example
 
-ASP.NET MVC: [Ci.Mvc.Alert.Net.Example](https://github.com/lettucebo/Ci.Mvc.Alert/tree/master/Ci.Mvc.Alert.Net.Example): [_Layout.cshtml](https://github.com/lettucebo/Ci.Mvc.Alert/blob/master/Ci.Mvc.Alert.Net.Example/Views/Shared/_Layout.cshtml)
+ASP.NET MVC:
+<br/>
+[Ci.Mvc.Alert.Net.Example](https://github.com/lettucebo/Ci.Mvc.Alert/tree/master/Ci.Mvc.Alert.Net.Example): [_Layout.cshtml](https://github.com/lettucebo/Ci.Mvc.Alert/blob/master/Ci.Mvc.Alert.Net.Example/Views/Shared/_Layout.cshtml)
 
-ASP.NET Core MVC: [Ci.Mvc.Alert.NetCore.Example](https://github.com/lettucebo/Ci.Mvc.Alert/tree/master/Ci.Mvc.Alert.NetCore.Example): [_ViewImports.cshtml](https://github.com/lettucebo/Ci.Mvc.Alert/blob/master/Ci.Mvc.Alert.NetCore.Example/Views/_ViewImports.cshtml), [_Layout.cshtml](https://github.com/lettucebo/Ci.Mvc.Alert/blob/master/Ci.Mvc.Alert.NetCore.Example/Views/Shared/_Layout.cshtml)
+ASP.NET Core MVC:
+<br/>
+[Ci.Mvc.Alert.NetCore.Example](https://github.com/lettucebo/Ci.Mvc.Alert/tree/master/Ci.Mvc.Alert.NetCore.Example): [_ViewImports.cshtml](https://github.com/lettucebo/Ci.Mvc.Alert/blob/master/Ci.Mvc.Alert.NetCore.Example/Views/_ViewImports.cshtml), [_Layout.cshtml](https://github.com/lettucebo/Ci.Mvc.Alert/blob/master/Ci.Mvc.Alert.NetCore.Example/Views/Shared/_Layout.cshtml)
 
 ### Note
 
