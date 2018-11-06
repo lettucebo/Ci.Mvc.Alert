@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Mvc.Alert", "Ci.Mvc.Aler
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ci.Mvc.Alert.NetCore", "Ci.Mvc.Alert.NetCore\Ci.Mvc.Alert.NetCore.csproj", "{8F21139C-A398-4F02-AAED-3B5B3DF48900}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Mvc.Alert.NetCore.Example", "Ci.Mvc.Alert.NetCore.Example\Ci.Mvc.Alert.NetCore.Example.csproj", "{A1498DB0-AF3B-494B-AF83-A64832EDBF44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8F21139C-A398-4F02-AAED-3B5B3DF48900}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F21139C-A398-4F02-AAED-3B5B3DF48900}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F21139C-A398-4F02-AAED-3B5B3DF48900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1498DB0-AF3B-494B-AF83-A64832EDBF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1498DB0-AF3B-494B-AF83-A64832EDBF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1498DB0-AF3B-494B-AF83-A64832EDBF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1498DB0-AF3B-494B-AF83-A64832EDBF44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

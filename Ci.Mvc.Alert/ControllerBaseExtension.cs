@@ -10,9 +10,10 @@ namespace Ci.Mvc.Alert
 {
     public static class ControllerBaseExtension
     {
-        public static void SetAlert(this ControllerBase controller, string message)
+        public static void SetAlert(this ControllerBase controller, string message, string title = "")
         {
-            controller.TempData["CiMvcAlert"] = message;
+            controller.TempData["CiMvcAlertMsg"] = message;
+            controller.TempData["CiMvcAlertTitle"] = title;
         }
     }
 }

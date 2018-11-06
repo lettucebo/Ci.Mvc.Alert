@@ -1,11 +1,12 @@
 ﻿using Ci.Extension.Core;
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Ci.Mvc.Alert.NetCore
 {
-    [HtmlTargetElement("CiMvcAlert")]
+    [HtmlTargetElement("cimvcalert")]
     public class CiMvcAlertTagHelper : TagHelper
     {
         [ViewContext]
@@ -18,22 +19,42 @@ namespace Ci.Mvc.Alert.NetCore
             {
                 var tempData = ViewContext.TempData;
 
-                var msg = tempData["CiMvcAlert"]?.ToString();
+                var msg = tempData["CiMvcAlertMsg"]?.ToString();
+                var title = tempData["CiMvcAlertTitle"]?.ToString();
 
-                if (!msg.IsNullOrWhiteSpace())
+                if (!msg.IsNullOrWhiteSpace() || !title.IsNullOrWhiteSpace())
                 {
                     output.TagName = "script";
+                    output.TagMode = TagMode.StartTagAndEndTag;
+                    output.Attributes.Add("type", "text/javascript");
+
+                    string alert;
+                    if (!title.IsNullOrWhiteSpace())
+                    {
+                        alert = $@"bootbox.alert( 
+                            {{
+                                title: '{title}',
+                                message: '{msg}' 
+                            }}
+                        ); ";
+                    }
+                    else
+                    {
+                        alert = $@"bootbox.alert('{msg}');";
+
+                    }
 
                     var script = $@"
                                     // start CiMvcAlert
                                     if (!(typeof bootbox === 'object')) {{
-                                        console.log('%c Ci.Mvc.Alert require bootboxJs to run!','color:#FF0000;')
+                                        throw('Ci.Mvc.Alert require bootboxJs to run!');
                                     }} else {{
-                                        bootbox.alert('{tempData["CiMvcAlert"]}');
+                                        {alert}
                                     }}
                                     // end CiMvcAlert
                                 ";
-                    output.PostContent.AppendHtml(script);
+
+                    output.PreContent.SetHtmlContent(script);
                 }
             }
         }

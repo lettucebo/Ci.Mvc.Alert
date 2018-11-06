@@ -1,54 +1,88 @@
 # Ci.Mvc.Alert
-A quick way to show alert mseeage for aspnet mvc
+##### A quick way to show alert mseeage for aspnet mvc and aspnetcore mvc
 
-![Ci.Mvc.Alert](https://i.imgur.com/pbpcl26.png)
+![Ci.Mvc.Alert](https://i.imgur.com/8XqqtLy.png)
 
 ## Notice
-This library require Bootbox.js(http://bootboxjs.com/#) to run, you can use nuget install or just put it in scripts folder and reference it.
+This library require Bootbox.js(http://bootboxjs.com/#) to run, you can use nuget, libman to install or just put it in scripts folder and reference it.
+
+If there is no bootbox.js browser console will show error msg as below:
+
+![](https://i.imgur.com/FYO97e9.png)
+
+## Intro
+At controller's action set alert message
+```csharp
+// no title dialog
+this.SetAlert("A quick way to show alert mseeage for aspnet mvc and aspnetcore mvc");
+
+// has title dialog
+this.SetAlert("A quick way to show alert mseeage for aspnet mvc and aspnetcore mvc", "CiMvcAlert");
+```
+
+**Result**
+
+![](https://i.imgur.com/5adKudN.png)
+
+![Ci.Mvc.Alert](https://i.imgur.com/8XqqtLy.png)
 
 ## Usage
-First install package via nuget
-```
-Install-Package Ci.Mvc.Alert
+
+### Install Package
+
+use nuget to install package: [Ci.Mvc.Alert](https://www.nuget.org/packages/Ci.Mvc.Alert/)
+
+```base
+Package Explorer: Install-Package Ci.Mvc.Alert -Version 2.0.1
+DotNet CLI: dotnet add package Ci.Mvc.Alert --version 2.0.1
 ```
 
 then at controller action set alert message
+
 ```csharp
-this.SetAlert("Ci.Mvc.Alert Demo");
+// no title dialog
+this.SetAlert("A quick way to show alert mseeage for aspnet mvc and aspnetcore mvc");
+
+// has title dialog
+this.SetAlert("A quick way to show alert mseeage for aspnet mvc and aspnetcore mvc", "CiMvcAlert");
 ```
 
 **this** means Controller
 
-OR
-
-it use Controller to extened method, so you also can get controller instance to use this method
+It use Controller to extened method, so you also can get controller instance to use this method
 
 ```csharp
 var controller = ViewContext.Controller;
-controller.SetAlert("Ci.Mvc.Alert Demo");
+controller.SetAlert("A quick way to show alert mseeage for aspnet mvc and aspnetcore mvc");
 ```
 
 To show the message at view, at view add following code
-<br>
-**ASP.NET**
+
+### ASP.NET
 
 html
 ```csharp
 @Html.ShowAlert()
 ```
 
-**ASP.NET Core**
+### ASP.NET Core
 
-Startup.cs add service
-```csharp
-services.AddScoped<ITagHelperComponent, CiMvcAlertTagHelper>();
+At _ViewImports.cshtml add TagHelper
+```c#
+@addTagHelper *, Ci.Mvc.Alert.NetCore
 ```
 
-html
+then add `cimvcalert` tag at razor page(cshtml)
 ```html
 <cimvcalert></cimvcalert>
 ```
 
-note: be aware javascript sqeuence(bootbox), must put after bootbox.js
+### Example
 
-then it's all set.
+ASP.NET MVC: 
+
+ASP.NET Core MVC: 
+
+### Note
+
+Be aware JavaScript sequence, `<cimvcalert></cimvcalert>` must put after bootbox.js

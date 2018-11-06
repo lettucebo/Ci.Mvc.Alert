@@ -14,11 +14,28 @@ namespace Ci.Mvc.Alert
     {
         public static MvcHtmlString ShowAlert(this HtmlHelper helper)
         {
-            var message = helper.ViewContext.Controller.TempData["CiMvcAlert"];
+            var message = helper.ViewContext.Controller.TempData["CiMvcAlertMsg"] as string;
+            var title = helper.ViewContext.Controller.TempData["CiMvcAlertTitle"] as string;
 
-            if (message == null || message.ToString().IsNullOrWhiteSpace())
+            if (message.IsNullOrWhiteSpace() && title.IsNullOrWhiteSpace())
             {
                 return MvcHtmlString.Empty;
+            }
+
+            string alert;
+            if (!title.IsNullOrWhiteSpace())
+            {
+                alert = $@"bootbox.alert( 
+                            {{
+                                title: '{title}',
+                                message: '{message}' 
+                            }}
+                        ); ";
+            }
+            else
+            {
+                alert = $@"bootbox.alert('{message}');";
+
             }
 
             var script = new TagBuilder("script");
@@ -28,7 +45,7 @@ namespace Ci.Mvc.Alert
                                     if (!(typeof bootbox === 'object')) {{
                                         throw('Ci.Mvc.Alert require bootboxJs to run!')
                                     }} else {{
-                                        bootbox.alert('{message}');
+                                        {alert}
                                     }}
                                     // end CiMvcAlert
                                 ";
