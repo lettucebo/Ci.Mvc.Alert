@@ -1,0 +1,29 @@
+trigger:
+- dev
+- master
+
+pool:
+  vmImage: 'windows-2019'
+  
+variables:
+  BuildConfiguration: 'Release'
+
+steps:
+- task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: restore
+    projects: '**/Ci.Mvc.Alert.Core*.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    projects: '**/Ci.Mvc.Alert.Core*.csproj'
+    arguments: '--configuration $(BuildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: test
+    projects: '**/*[Tt]est/*.csproj'
+    arguments: '--configuration $(BuildConfiguration) --no-restore'
