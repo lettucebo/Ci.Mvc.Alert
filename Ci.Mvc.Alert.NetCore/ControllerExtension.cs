@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-namespace Ci.Mvc.Alert.NetCore
+
+namespace Ci.Mvc.Alert.Core
 {
     public static class ControllerExtension
     {

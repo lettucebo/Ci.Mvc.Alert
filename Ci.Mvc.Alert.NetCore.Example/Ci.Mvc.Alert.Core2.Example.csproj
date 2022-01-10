@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ci.Mvc.Alert.NetCore\Ci.Mvc.Alert.NetCore.csproj" />
+    <ProjectReference Include="..\Ci.Mvc.Alert.NetCore\Ci.Mvc.Alert.Core.csproj" />
   </ItemGroup>
 
 </Project>

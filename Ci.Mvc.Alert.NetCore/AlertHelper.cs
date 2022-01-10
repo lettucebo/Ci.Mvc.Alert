@@ -1,10 +1,9 @@
-﻿using Ci.Extension.Core;
-using Microsoft.AspNetCore.Html;
+﻿using Ci.Extension;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace Ci.Mvc.Alert.NetCore
+namespace Ci.Mvc.Alert.Core
 {
     [HtmlTargetElement("cimvcalert")]
     public class CiMvcAlertTagHelper : TagHelper

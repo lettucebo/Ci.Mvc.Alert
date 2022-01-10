@@ -1,17 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29319.158
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Mvc.Alert", "Ci.Mvc.Alert\Ci.Mvc.Alert.csproj", "{BFFB827E-149C-4DDC-BA64-D978AC3178FD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ci.Mvc.Alert.NetCore", "Ci.Mvc.Alert.NetCore\Ci.Mvc.Alert.NetCore.csproj", "{8F21139C-A398-4F02-AAED-3B5B3DF48900}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ci.Mvc.Alert.NetCore.Example", "Ci.Mvc.Alert.NetCore.Example\Ci.Mvc.Alert.NetCore.Example.csproj", "{A1498DB0-AF3B-494B-AF83-A64832EDBF44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ci.Mvc.Alert.Core", "Ci.Mvc.Alert.NetCore\Ci.Mvc.Alert.Core.csproj", "{8F21139C-A398-4F02-AAED-3B5B3DF48900}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Mvc.Alert.Net.Example", "Ci.Mvc.Alert.Net.Example\Ci.Mvc.Alert.Net.Example.csproj", "{DDFA9DAF-B635-4B78-A10A-F653AD896A1B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ci.Mvc.Alert.CoreApp", "Ci.Mvc.Alert.NetCoreApp\Ci.Mvc.Alert.CoreApp.csproj", "{AE199747-590B-43D9-8A05-EF902DDF039C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Mvc.Alert.Core.Example", "Ci.Mvc.Alert.Core5.Example\Ci.Mvc.Alert.Core.Example.csproj", "{779BF29C-9B46-4864-BE1A-C34556236DEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,18 +25,14 @@ Global
 		{8F21139C-A398-4F02-AAED-3B5B3DF48900}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F21139C-A398-4F02-AAED-3B5B3DF48900}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F21139C-A398-4F02-AAED-3B5B3DF48900}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A1498DB0-AF3B-494B-AF83-A64832EDBF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1498DB0-AF3B-494B-AF83-A64832EDBF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1498DB0-AF3B-494B-AF83-A64832EDBF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1498DB0-AF3B-494B-AF83-A64832EDBF44}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DDFA9DAF-B635-4B78-A10A-F653AD896A1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DDFA9DAF-B635-4B78-A10A-F653AD896A1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDFA9DAF-B635-4B78-A10A-F653AD896A1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDFA9DAF-B635-4B78-A10A-F653AD896A1B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AE199747-590B-43D9-8A05-EF902DDF039C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE199747-590B-43D9-8A05-EF902DDF039C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE199747-590B-43D9-8A05-EF902DDF039C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE199747-590B-43D9-8A05-EF902DDF039C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{779BF29C-9B46-4864-BE1A-C34556236DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{779BF29C-9B46-4864-BE1A-C34556236DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{779BF29C-9B46-4864-BE1A-C34556236DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{779BF29C-9B46-4864-BE1A-C34556236DEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
