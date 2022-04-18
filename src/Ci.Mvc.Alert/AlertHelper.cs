@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Net;
+using System.Web.Mvc;
 using Ci.Extension;
 
 namespace Ci.Mvc.Alert
@@ -9,6 +10,9 @@ namespace Ci.Mvc.Alert
         {
             var message = helper.ViewContext.Controller.TempData["CiMvcAlertMsg"] as string;
             var title = helper.ViewContext.Controller.TempData["CiMvcAlertTitle"] as string;
+
+            message = WebUtility.HtmlEncode(message);
+            title = WebUtility.HtmlEncode(title);
 
             if (message.IsNullOrWhiteSpace() && title.IsNullOrWhiteSpace())
             {
