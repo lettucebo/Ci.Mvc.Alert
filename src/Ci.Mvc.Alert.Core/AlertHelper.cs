@@ -1,4 +1,6 @@
-﻿using Ci.Extension;
+﻿using System.Net;
+using Ci.Extension;
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -20,6 +22,9 @@ namespace Ci.Mvc.Alert.Core
 
                 var msg = tempData["CiMvcAlertMsg"]?.ToString();
                 var title = tempData["CiMvcAlertTitle"]?.ToString();
+
+                msg = WebUtility.HtmlEncode(msg);
+                title = WebUtility.HtmlEncode(title);
 
                 if (!msg.IsNullOrWhiteSpace() || !title.IsNullOrWhiteSpace())
                 {
