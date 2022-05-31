@@ -38,13 +38,15 @@ namespace Ci.Mvc.Alert
             var script = new TagBuilder("script");
             script.Attributes.Add("type", "text/javascript");
             script.InnerHtml = $@"
-                                    // start CiMvcAlert
-                                    if (!(typeof bootbox === 'object')) {{
-                                        throw('Ci.Mvc.Alert require bootboxJs to run!')
-                                    }} else {{
-                                        {alert}
-                                    }}
-                                    // end CiMvcAlert
+                                    window.onload = function() {{
+                                        // start CiMvcAlert
+                                        if (!(typeof bootbox === 'object')) {{
+                                            throw('Ci.Mvc.Alert require bootboxJs to run!');
+                                        }} else {{
+                                            {alert}
+                                        }}
+                                        // end CiMvcAlert
+                                    }};
                                 ";
             return MvcHtmlString.Create(script.ToString());
         }

@@ -49,13 +49,15 @@ namespace Ci.Mvc.Alert.Core
                     }
 
                     var script = $@"
-                                    // start CiMvcAlert
-                                    if (!(typeof bootbox === 'object')) {{
-                                        throw('Ci.Mvc.Alert require bootboxJs to run!');
-                                    }} else {{
-                                        {alert}
-                                    }}
-                                    // end CiMvcAlert
+                                    window.onload = function() {{
+                                        // start CiMvcAlert
+                                        if (!(typeof bootbox === 'object')) {{
+                                            throw('Ci.Mvc.Alert require bootboxJs to run!');
+                                        }} else {{
+                                            {alert}
+                                        }}
+                                        // end CiMvcAlert
+                                    }};
                                 ";
 
                     output.PreContent.SetHtmlContent(script);
