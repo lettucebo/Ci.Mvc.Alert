@@ -25,6 +25,7 @@ namespace Ci.Mvc.Alert.Core
                 var title = tempData["CiMvcAlertTitle"]?.ToString();
 
                 msg = WebUtility.HtmlEncode(msg);
+                msg = msg?.Replace("&lt;br/&gt;", "<br/>").Replace("&lt;br&gt;", "<br/>");
                 title = WebUtility.HtmlEncode(title);
 
                 if (!msg.IsNullOrWhiteSpace() || !title.IsNullOrWhiteSpace())
@@ -60,11 +61,12 @@ namespace Ci.Mvc.Alert.Core
                                         // end CiMvcAlert
                                     }};
                                 ";
+
                     output.Content.SetHtmlContent(script);
                 }
             }
         }
 
-        
+
     }
 }

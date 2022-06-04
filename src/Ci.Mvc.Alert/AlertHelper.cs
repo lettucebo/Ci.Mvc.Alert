@@ -12,6 +12,7 @@ namespace Ci.Mvc.Alert
             var title = helper.ViewContext.Controller.TempData["CiMvcAlertTitle"] as string;
 
             message = WebUtility.HtmlEncode(message);
+            message = message?.Replace("&lt;br/&gt;", "<br/>").Replace("&lt;br&gt;", "<br/>");
             title = WebUtility.HtmlEncode(title);
 
             if (message.IsNullOrWhiteSpace() && title.IsNullOrWhiteSpace())
@@ -24,14 +25,14 @@ namespace Ci.Mvc.Alert
             {
                 alert = $@"bootbox.alert( 
                             {{
-                                title: '{title}',
-                                message: '{message}' 
+                                title: `{title}`,
+                                message: `{message}` 
                             }}
                         ); ";
             }
             else
             {
-                alert = $@"bootbox.alert('{message}');";
+                alert = $@"bootbox.alert(`{message}`);";
 
             }
 
