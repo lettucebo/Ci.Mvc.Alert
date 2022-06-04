@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Text;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Ci.Mvc.Alert.Core.Example.Controllers
@@ -14,13 +15,18 @@ namespace Ci.Mvc.Alert.Core.Example.Controllers
 
         public IActionResult Index()
         {
-            this.SetAlert("A quick way to show alert message for aspnet mvc and aspnetcore mvc", "CiMvcAlert");
+            this.SetAlert("A quick way to show alert message for aspnet mvc and aspnetcore mvc <br>", "CiMvcAlert");
             return View();
         }
 
         public IActionResult Redirect()
         {
-            this.SetAlert("Redirect message", "Redirect alert");
+            // this.SetAlert("Redirect message", "Redirect alert");
+
+            var sb = new StringBuilder();
+            sb.AppendLine("Test1<br/>");
+            sb.AppendLine("Test2<br/>");
+            this.SetAlert(sb.ToString(), "Redirect alert");
             return RedirectToAction("Result", "Home");
         }
 

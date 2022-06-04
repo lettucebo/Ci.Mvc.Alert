@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Linq;
+using System.Net;
 using Ci.Extension;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -37,14 +38,14 @@ namespace Ci.Mvc.Alert.Core
                     {
                         alert = $@"bootbox.alert( 
                             {{
-                                title: '{title}',
-                                message: '{msg}' 
+                                title: `{title}`,
+                                message: `{msg}` 
                             }}
                         ); ";
                     }
                     else
                     {
-                        alert = $@"bootbox.alert('{msg}');";
+                        alert = $@"bootbox.alert(`{msg}`);";
 
                     }
 
@@ -59,10 +60,11 @@ namespace Ci.Mvc.Alert.Core
                                         // end CiMvcAlert
                                     }};
                                 ";
-
-                    output.PreContent.SetHtmlContent(script);
+                    output.Content.SetHtmlContent(script);
                 }
             }
         }
+
+        
     }
 }
