@@ -6,13 +6,12 @@ trigger:
 pr: none
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: "windows-latest"
 
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-
+  solution: "**/*.sln"
+  buildPlatform: "Any CPU"
+  buildConfiguration: "Release"
 
 stages:
   - stage: Build
@@ -21,34 +20,39 @@ stages:
       - job: Build
         displayName: Build
         pool:
-          vmImage: 'windows-latest'
+          vmImage: "windows-latest"
 
         steps:
+          - task: UseDotNet@2
+            inputs:
+              packageType: "sdk"
+              version: "6.0.x"
+
           - task: DotNetCoreCLI@2
             displayName: Restore
             inputs:
-              command: 'restore'
-              projects: '**/Ci.Mvc.Alert.Core.csproj'
+              command: "restore"
+              projects: "**/Ci.Mvc.Alert.Core.csproj"
 
           - task: DotNetCoreCLI@2
             displayName: Build
             inputs:
-              command: 'build'
-              projects: '**/Ci.Mvc.Alert.Core.csproj'
-              arguments: '--configuration $(BuildConfiguration)'
+              command: "build"
+              projects: "**/Ci.Mvc.Alert.Core.csproj"
+              arguments: "--configuration $(BuildConfiguration)"
 
           - task: NuGetCommand@2
-            displayName: 'NuGet pack Ci.Mvc.Alert.Core'
+            displayName: "NuGet pack Ci.Mvc.Alert.Core"
             inputs:
-              command: 'pack'
+              command: "pack"
               packagesToPack: 'src/Ci.Mvc.Alert.Core\Ci.Mvc.Alert.Core.csproj'
               includeSymbols: true
 
           - task: PublishBuildArtifacts@1
             inputs:
-              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-              ArtifactName: 'drop'
-              publishLocation: 'Container'
+              PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+              ArtifactName: "drop"
+              publishLocation: "Container"
 
   - stage: Deploy
     displayName: Deploy stage
@@ -57,22 +61,22 @@ stages:
     jobs:
       - deployment: Deploy
         displayName: Deploy To Nuget.org
-        environment: 'production'
+        environment: "production"
         pool:
-          vmImage: 'windows-latest'
+          vmImage: "windows-latest"
         strategy:
           runOnce:
             deploy:
               steps:
                 - task: DownloadBuildArtifacts@0
                   inputs:
-                    buildType: 'current'
-                    downloadType: 'single'
-                    artifactName: 'drop'
-                    downloadPath: '$(System.ArtifactsDirectory)'
+                    buildType: "current"
+                    downloadType: "single"
+                    artifactName: "drop"
+                    downloadPath: "$(System.ArtifactsDirectory)"
                 - task: NuGetCommand@2
                   inputs:
-                    command: 'push'
-                    packagesToPush: '$(System.ArtifactsDirectory)/**/*.nupkg;!$(System.ArtifactsDirectory)/**/*.symbols.nupkg'
-                    nuGetFeedType: 'external'
-                    publishFeedCredentials: 'Nuget.org'
+                    command: "push"
+                    packagesToPush: "$(System.ArtifactsDirectory)/**/*.nupkg;!$(System.ArtifactsDirectory)/**/*.symbols.nupkg"
+                    nuGetFeedType: "external"
+                    publishFeedCredentials: "Nuget.org"
