@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <OutputType>Library</OutputType>
 	    <Authors>Money Yu</Authors>
 	    <Company>Money</Company>
 	    <Description>Library to create and use COMB (timestamped sequential) GUID variants for Microsoft SQL Server and PostgreSQL. See the GitHub site for more details.</Description>
-	    <Version>5.0.3</Version>
+	    <Version>6.0.1</Version>
 	    <PackageIconUrl>https://i.imgur.com/3xZ4Cdx.png</PackageIconUrl>
 	    <PackageProjectUrl>https://github.com/lettucebo/Ci.Mvc.Alert</PackageProjectUrl>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ci.Extensions" Version="2.2.2" />
+        <PackageReference Include="Ci.Extensions" Version="6.0.1" />
     </ItemGroup>
 
 </Project>

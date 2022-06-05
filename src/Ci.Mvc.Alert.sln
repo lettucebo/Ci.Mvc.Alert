@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Mvc.Alert", "Ci.Mvc.Alert\Ci.Mvc.Alert.csproj", "{BFFB827E-149C-4DDC-BA64-D978AC3178FD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ci.Mvc.Alert.Net.Example", "Ci.Mvc.Alert.Net.Example\Ci.Mvc.Alert.Net.Example.csproj", "{DDFA9DAF-B635-4B78-A10A-F653AD896A1B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ci.Mvc.Alert.Core", "Ci.Mvc.Alert.Core\Ci.Mvc.Alert.Core.csproj", "{6AA34EC9-63F1-4E01-A06A-B272EBECBAEC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ci.Mvc.Alert.Core.Example", "Ci.Mvc.Alert.Core.Example\Ci.Mvc.Alert.Core.Example.csproj", "{98464829-B1B3-4BD4-B09E-7EF5F003515E}"
@@ -17,14 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BFFB827E-149C-4DDC-BA64-D978AC3178FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFFB827E-149C-4DDC-BA64-D978AC3178FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFFB827E-149C-4DDC-BA64-D978AC3178FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFFB827E-149C-4DDC-BA64-D978AC3178FD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDFA9DAF-B635-4B78-A10A-F653AD896A1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDFA9DAF-B635-4B78-A10A-F653AD896A1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDFA9DAF-B635-4B78-A10A-F653AD896A1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDFA9DAF-B635-4B78-A10A-F653AD896A1B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6AA34EC9-63F1-4E01-A06A-B272EBECBAEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6AA34EC9-63F1-4E01-A06A-B272EBECBAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AA34EC9-63F1-4E01-A06A-B272EBECBAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
