@@ -9,5 +9,11 @@ namespace Ci.Mvc.Alert.Core
             controller.TempData["CiMvcAlertMsg"] = message;
             controller.TempData["CiMvcAlertTitle"] = title;
         }
+
+        public static void ClearAlert(this Controller controller)
+        {
+            controller.TempData["CiMvcAlertMsg"] = string.Empty;
+            controller.TempData["CiMvcAlertTitle"] = string.Empty;
+        }
     }
 }
