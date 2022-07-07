@@ -1,6 +1,6 @@
 # Ci.Mvc.Alert
 [![Build Status](https://dev.azure.com/lettucebo/Github.Build/_apis/build/status/Ci.Mvc.Alert/Ci.Mvc.Alert.Build?branchName=master)](https://dev.azure.com/lettucebo/Github.Build/_build/latest?definitionId=28&branchName=master)
-[![Nuget](https://img.shields.io/nuget/dt/Ci.Mvc.Alert)](https://www.nuget.org/packages/Ci.Mvc.Alert)
+[![Nuget](https://img.shields.io/nuget/dt/Ci.Mvc.Alert?label=NuGet)](https://www.nuget.org/packages/Ci.Mvc.Alert)
 
 ##### A quick way to show alert mseeage for aspnet mvc and aspnetcore mvc
 
