@@ -19,6 +19,13 @@ namespace Ci.Mvc.Alert.Core.Example.Controllers
             return View();
         }
 
+        public IActionResult AddAlert()
+        {
+            this.AddAlert("Line01<br/>");
+            this.AddAlert("Line02<br/>");
+            return View();
+        }
+
         public IActionResult Redirect()
         {
             // this.SetAlert("Redirect message", "Redirect alert");
