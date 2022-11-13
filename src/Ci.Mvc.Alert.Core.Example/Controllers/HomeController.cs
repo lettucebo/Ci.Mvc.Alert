@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -39,6 +40,18 @@ namespace Ci.Mvc.Alert.Core.Example.Controllers
 
         public IActionResult Result()
         {
+            return View();
+        }
+
+        public IActionResult ErrorTW()
+        {
+            this.SetErrorAlert("This is a error msg with zh-TW title");
+            return View();
+        }
+
+        public IActionResult ErrorEN()
+        {
+            this.SetErrorAlert("This is a error msg with en-US title", new CultureInfo("en-US"));
             return View();
         }
     }
