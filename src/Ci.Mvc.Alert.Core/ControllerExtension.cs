@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Globalization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Ci.Mvc.Alert.Core
 {
@@ -14,6 +15,21 @@ namespace Ci.Mvc.Alert.Core
         {
             controller.TempData["CiMvcAlertMsg"] = message;
             controller.TempData["CiMvcAlertTitle"] = title;
+        }
+
+        /// <summary>
+        /// Set a new error alert
+        /// </summary>
+        /// <param name="controller"></param>
+        /// <param name="message"></param>
+        /// <param name="cultureInfo"></param>
+        public static void SetErrorAlert(this Controller controller, string message, CultureInfo cultureInfo = null)
+        {
+            controller.TempData["CiMvcAlertMsg"] = message;
+            if (cultureInfo != null && cultureInfo.Name.ToLower() == "en-us")
+                controller.TempData["CiMvcAlertTitle"] = "Error";
+            else
+                controller.TempData["CiMvcAlertTitle"] = "錯誤";
         }
 
         /// <summary>
